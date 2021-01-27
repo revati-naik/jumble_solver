@@ -32,6 +32,7 @@ def download_data():
 			print("Data already exists.All set!")
 	except:
 		print("Problem connecting to the url! Try Again")
+		exit()
 	
 ##
 ## Searchs for the word in the dataset
