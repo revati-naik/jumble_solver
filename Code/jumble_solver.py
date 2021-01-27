@@ -17,14 +17,22 @@ def download_data():
 	#file path to data set (.txt) file
 	data_file_path = "./../Data/word_list.txt"
 
-	##Checks if the data set file exists. If not true, will create a new file
+	#Checks if the data set file exists. If not true, will create a new file
 	if not os.path.isfile(data_file_path):
+		print("Downloading Dataset")
 		file = open("./../Data/word_list.txt", "w+")
 		file.write(words_data)
+		print("Dataset Downloaded Successfully")
 
 	else:
 		print("Data already exists.All set!")
 
+##
+## Searchs for the word in the dataset
+##
+## :param      search_word:  The search word
+## :type       search_word:  string
+##
 def search_word(search_word):
 
 	#open the word list file and read it
@@ -33,9 +41,16 @@ def search_word(search_word):
 	i = 0
 
 	for word in file_data:
+
+		#check if the word is found
 		if word == search_word:
-			print("Word Found! at ", i)
-			return
+			print("Original Word Found at ", i)
+			# return
+
+		#check if the reverse word is found
+		if word == search_word[::-1]:
+			print("Reverse Word Found: ", search_word[::-1])
+
 		i += 1
 
 if __name__ == '__main__':
