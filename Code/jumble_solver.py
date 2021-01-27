@@ -8,7 +8,7 @@ from urllib.request import urlopen
 
 
 ##
-##Downloads the word list as data set
+## Downloads the word list as data set
 ##
 def download_data():
 
@@ -33,6 +33,7 @@ def download_data():
 	except:
 		print("Problem connecting to the url! Try Again")
 		exit()
+		
 	
 ##
 ## Searchs for the word in the dataset
@@ -40,10 +41,10 @@ def download_data():
 ## :param      search_word:  The search word
 ## :type       search_word:  string
 ##
-def search_word(search_word):
+def search_word(search_word, filename='word_list.txt'):
 
 	#open the word list file and read it
-	file = open("./../Data/word_list.txt", "r")
+	file = open("./../Data/" + filename, "r")
 	file_data = file.read().split()
 	i = 0
 
@@ -52,11 +53,6 @@ def search_word(search_word):
 		#check if the word is found
 		if sorted(word) == sorted(search_word):
 			print("Original Word Found: ", word)
-			# return
-
-		#check if the reverse word is found
-		# if word == search_word[::-1]:
-		# 	print("Reverse Word Found: ", search_word[::-1])
 
 		search_substring(search_word=search_word, word=word)
 
@@ -65,9 +61,7 @@ def search_word(search_word):
 def create_aux(word):
     aux = [0] * len(word)
 
-    
     i = 1
-    
     j = 0
     while i < len(word):
         if word[i] == word[j]:
@@ -109,21 +103,31 @@ if __name__ == '__main__':
 	#download the data and save it in a text file
 	download_data()
 
-
 	#read word input from the cli
 	parser = argparse.ArgumentParser()
-	# parser.add_argument('word')
-	# parser.add_argument('filename', )
 	parser.add_argument('-f', '--filename', help='Word Filename',required=False)
 	parser.add_argument('-w', '--word', help='Word', required=True)
 	args = parser.parse_args()
 
+	if args.filename:
+		print("======================================")
+		print("Word List filename: ", args.filename)
+		print("Word to search for: ", args.word)
+		print("======================================")
+		search_word(search_word=args.word, filename=args.filename)
 
-	print("======================================")
-	print("Word List filename: ", args.filename)
-	print("Word to search for: ", args.word)
-	print("======================================")
+	else:
+		print("======================================")
+		print("Word List filename: word_list.txt")
+		print("Word to search for: ", args.word)
+		print("======================================")
+		search_word(search_word=args.word, filename='word_list.txt')
 
-	search_word(args.word)
+
+
+	
+	
+
+	
 	
 
