@@ -1,4 +1,4 @@
-# jumble_solver
+# Jumble Solver
 
 Build a jumble solver in Python3
 
