@@ -80,7 +80,7 @@ def search_word(search_word, file_path='word_list.txt'):
 
 		#check if the search word matches the word word in the file. This also #check for anagrams
 		if sorted(word) == sorted(search_word):
-			print("Original Word Found: ", word)
+			print(word)
 
 		#tries to search for substring matches
 		search_substring(search_word=search_word, word=word)
@@ -107,9 +107,7 @@ def create_aux(word):
 def search_substring(search_word, word):
 	aux = create_aux(word)
 
-	
 	i = 0
-	
 	j = 0
 	while j < len(search_word):
 	    if word[i] != search_word[j]:
@@ -121,7 +119,7 @@ def search_substring(search_word, word):
 	        i += 1
 	        j += 1
 	        if i == len(word):
-	            print("Found substring in word list: ", word)
+	            print(word)
 	            i = aux[i-1]
 
 
