@@ -79,4 +79,10 @@ eg.
 **To run the program and use a text file by the user**
 
     python3 jumble_solver.py -f path/to/file [REQUIRED] -w search_word [REQUIRED]
+    
+## Documentation
+
+Uses Doxygen for documenting the project. Please refer to doxygen/html/index.html --> Files. to view the code documentation. 
+
+**Note: The code follows PEP8 Compliance**
 
