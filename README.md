@@ -25,6 +25,8 @@ The program also searches for sub-strings of the original word in the list. Sub-
 
   * argparse
 
+The `requirements.txt` file contains the packages to be installed. 
+
     pip3 install --user -r requirements.txt
 
    
