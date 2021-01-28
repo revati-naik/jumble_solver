@@ -14,7 +14,7 @@ The program searches for words in the list (text file) which are anagrams to the
 
 The program also searches for sub-strings of the original word in the list. Sub-string search can be done in various ways. The classic way would be use the naive method. In this method, the substring (the word to be searched) is matched to the string (the word from the list) letter by letter. When we have a letter mismatch, we move to the next letter. This is an inefficient method to perform the search. The time complexity of this method is `O(mn)` where `m` is the length of the substring, `n` is the length of the string. 
 
-![alt text](https://github.com/revati-naik/jumble_solver/blob/master/Images/mismatch.png?raw=true)
+![MisMatch](mismatch.png)
 
 
 KMP algorithm skips matching the part which has been already matched. This way, we do not need to move one step at a time, but skip the part that alredy has been matched. This will reduce the complexity less than O(mn) as now it will not be iterating over all the letter of the string (length `n`). This can be achieved by creating an aux string. The aux string will store the index value till what we can skip matching. 
