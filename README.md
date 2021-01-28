@@ -35,7 +35,7 @@ The dataset used in the code is [here](http://www.mit.edu/~ecprice/wordlist.1000
 
 ### Manual Download and Save:
 
-You can manually download any dataset or used an existign dataset. The file needs to be a `.txt` file and would conatin all the words either separated by space or one word on each line. You can refer to the sample from the above section. 
+You can manually download any dataset or used an existing dataset. The file needs to be a `.txt` file and would conatin all the words either separated by space or one word on each line. You can refer to the sample from the above section. A sample file is also available in the `/Data` folder. 
 
 ## How to run   
 
@@ -45,7 +45,7 @@ The repository can be cloned on a local machine using the command
 
 The program file `jumble_solver.py` can be run to execute the program. The program takes in few inputs from the command line. 
 
-1. `-f path/to/file/ [OPTIONAL]` : This is the path to the `.txt` file provided by the user. Default action would be that the dataset will be automatically downloaded from the link in the code and save as `/Data/word_list.txt`. 
+1. `-f path/to/file/ [OPTIONAL]` : This is the path to the `.txt` file provided by the user. Default action would be that the dataset will be automatically downloaded from the link in the code and save as `/Data/word_list.txt` and this dataset (list of words) will be used for search (match). 
 
 2. `-w search_word [REQUIRED]` : This is the word for which the program needs to find match for in the text file. 
 
