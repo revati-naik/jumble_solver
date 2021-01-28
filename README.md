@@ -53,9 +53,7 @@ The program file `jumble_solver.py` can be run to execute the program. The progr
 
 2. `[-w search_word] [REQUIRED]` : This is the word for which the program needs to find match for in the text file. 
 
-
-
-   ` python3 jumble_solver.py -w search_word [-f path/to/file/]`
+    python3 jumble_solver.py -w search_word [-f path/to/file/]
 
 
 
