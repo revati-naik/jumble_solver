@@ -12,7 +12,7 @@ An anagram is a word or phrase formed by rearranging the letters of a different 
 
 The program searches for words in the list (text file) which are anagrams to the search word provided by the user. For this, the both the search word and the word from the list are *sorted*. Sorting a string in python arranges all the letters in the word in alphabetical order. Next, it would compare both the strings to check if the letters match. If all the letters match, they are anagrams and hence a match!
 
-The program also searches for sub-strings of the original word in the list. Sub-string search can be done in various ways. The classic way would be use the naive method. In this method, the substring (the word to be searched) is mathched to the string (the word from the list) letter by letter. When we have have a letter mismatch, we move to the next letter. This is an innefficient method to perform the search. The time complexity of this method is `O(mn)` where `m` is the length of the substring, `n` is the length of the string. KMP algorithm skips matching the part which has been already matched. This way, we do not need to move one step at a time, but skip the part that alredy has been matched. This will reduce the complexcity less than O(mn). This can be achieved by creating an aux string. The aux string will store the index value till what we can skip matching. 
+The program also searches for sub-strings of the original word in the list. Sub-string search can be done in various ways. The classic way would be use the naive method. In this method, the substring (the word to be searched) is matched to the string (the word from the list) letter by letter. When we have a letter mismatch, we move to the next letter. This is an inefficient method to perform the search. The time complexity of this method is `O(mn)` where `m` is the length of the substring, `n` is the length of the string. KMP algorithm skips matching the part which has been already matched. This way, we do not need to move one step at a time, but skip the part that alredy has been matched. This will reduce the complexity less than O(mn) as now it will not be iterating over all the letter of the string (length `n`). This can be achieved by creating an aux string. The aux string will store the index value till what we can skip matching. 
 
 
 ## Dependencies
@@ -21,7 +21,7 @@ The program also searches for sub-strings of the original word in the list. Sub-
   
   * Python 3.x ([Download](https://www.python.org/downloads/))
   
-  * urllib
+  * requests
 
   * argparse
 
@@ -49,9 +49,15 @@ The repository can be cloned on a local machine using the command
 
 The program file `jumble_solver.py` can be run to execute the program. The program takes in few inputs from the command line. 
 
-1. `-f path/to/file/ [OPTIONAL]` : This is the path to the `.txt` file provided by the user. Default action would be that the dataset will be automatically downloaded from the link in the code and save as `/Data/word_list.txt` and this dataset (list of words) will be used for search (match). 
+1. `[-f path/to/file/] [OPTIONAL]` : This is the path to the `.txt` file provided by the user. Default action would be that the dataset will be automatically downloaded from the link in the code and save as `/Data/word_list.txt` and this dataset (list of words) will be used for search (match). 
 
-2. `-w search_word [REQUIRED]` : This is the word for which the program needs to find match for in the text file. 
+2. `[-w search_word] [REQUIRED]` : This is the word for which the program needs to find match for in the text file. 
+
+
+
+   ` python3 jumble_solver.py -w search_word [-f path/to/file/]`
+
+
 
 **To run the program and use the default dataset**
 
