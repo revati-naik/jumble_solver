@@ -45,7 +45,7 @@ The repository can be cloned on a local machine using the command
 
 The program file `jumble_solver.py` can be run to execute the program. The program takes in few inputs from the command line. 
 
-1. `-f path\to\file\ [OPTIONAL]` : This is the path to the `.txt` file provided by the user. Default action would be that the dataset will be automatically downloaded from the link in the code and save as `/Data/word_list.txt`. 
+1. `-f path/to/file/ [OPTIONAL]` : This is the path to the `.txt` file provided by the user. Default action would be that the dataset will be automatically downloaded from the link in the code and save as `/Data/word_list.txt`. 
 
 2. `-w search_word [REQUIRED]` : This is the word for which the program needs to find match for in the text file. 
 
