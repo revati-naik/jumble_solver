@@ -10,13 +10,18 @@ from urllib.request import urlopen
 ##
 ## Downloads the word list as data set
 ##
-def download_data():
+def download():
 
 	#link to the words list dataset
 	link = "http://www.mit.edu/~ecprice/wordlist.10000"
+
+	#try to connect to the specified url. Throw an exception on failure
 	try:
+
+		#open the link and read the data on the link
 		data = urlopen(link)
 		words_data = data.read().decode('utf-8')
+
 
 		#file path to data set (.txt) file
 		data_file_path = "./../Data/word_list.txt"
@@ -24,39 +29,61 @@ def download_data():
 		#Checks if the data set file exists. If not true, will create a new file
 		if not os.path.isfile(data_file_path):
 			print("Downloading Dataset")
+
+			#opening the file 
 			file = open("./../Data/word_list.txt", "w+")
+			# f.seek(0)
+
+			#writing the downloaded data to the file
 			file.write(words_data)
+			# file.truncate()
 			print("Dataset Downloaded Successfully")
 
+		#if data file already exists
 		else:
 			print("Data already exists.All set!")
+
+	#failed to connect to the url
 	except:
 		print("Problem connecting to the url! Try Again")
 		exit()
-		
+
 	
 ##
 ## Searchs for the word in the dataset
 ##
-## :param      search_word:  The search word
+## :param      search_word:  The user deifned word for which we find the match
 ## :type       search_word:  string
+## :param      filename:     The filename which contains a list of english words
+## :type       filename:     string
 ##
-def search_word(search_word, filename='word_list.txt'):
+def search_word(search_word, file_path='word_list.txt'):
 
-	#open the word list file and read it
-	file = open("./../Data/" + filename, "r")
-	file_data = file.read().split()
-	i = 0
+	#try to open the file. Throws an exception if file does not exist
 
+	if file_path == 'word_list.txt':
+		dir_path = './../Data/word_list.txt'
+	else:
+		dir_path = file_path
+
+	try:
+		#open the word list file and read it
+		file = open(dir_path, "r")
+		file_data = file.read().split()
+	except:
+		print("File does not exist!")
+		exit()
+
+
+	#iterating over every word in the file
 	for word in file_data:
 
-		#check if the word is found
+		#check if the search word matches the word word in the file. This also #check for anagrams
 		if sorted(word) == sorted(search_word):
 			print("Original Word Found: ", word)
 
+		#tries to search for substring matches
 		search_substring(search_word=search_word, word=word)
-
-		i += 1
 
 def create_aux(word):
     aux = [0] * len(word)
@@ -100,28 +127,33 @@ def search_substring(search_word, word):
 
 if __name__ == '__main__':
 
-	#download the data and save it in a text file
-	download_data()
-
-	#read word input from the cli
 	parser = argparse.ArgumentParser()
-	parser.add_argument('-f', '--filename', help='Word Filename',required=False)
-	parser.add_argument('-w', '--word', help='Word', required=True)
+	# download_data()
+
+	#read the filename from the user. This is an optional argument 
+	#deafult is the already available dataset in ./Data folder
+	parser.add_argument('-f', '--filename', help='Word List Filename', required=False, default='word_list.txt')
+
+	#read the user defined word from the cli
+	parser.add_argument('-w', '--word', help='Search Word', required=True)
+
+	#read the user input to make a choice on downloading data from the url
+	# parser.add_argument('-d', '--download_data', help='Download the data from the link', required=False)
+
 	args = parser.parse_args()
 
-	if args.filename:
-		print("======================================")
-		print("Word List filename: ", args.filename)
-		print("Word to search for: ", args.word)
-		print("======================================")
-		search_word(search_word=args.word, filename=args.filename)
+	#user selects to download the dataset
+	if args.filename == 'word_list.txt':
+		download()
 
-	else:
-		print("======================================")
-		print("Word List filename: word_list.txt")
-		print("Word to search for: ", args.word)
-		print("======================================")
-		search_word(search_word=args.word, filename='word_list.txt')
+	print("======================================")
+	print("Word List filename: ", args.filename)
+	print("Word to search for: ", args.word)
+	print("======================================")
+
+
+	# download the data and save it in a text file
+	search_word(search_word=args.word, file_path=args.filename)
 
 
 
