@@ -1,0 +1,143 @@
+\hypertarget{namespacejumble__solver}{}\doxysection{jumble\+\_\+solver Namespace Reference}
+\label{namespacejumble__solver}\index{jumble\_solver@{jumble\_solver}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacejumble__solver_a6b21113c44f0c5cd849ee18039b9e2eb}{create\+\_\+aux}} (\mbox{\hyperlink{namespacejumble__solver_a69584ba90b098f23df3702374e594862}{word}})
+\item 
+def \mbox{\hyperlink{namespacejumble__solver_aba8384dbe60fa55f16120293a9c43d56}{download}} ()
+\item 
+def \mbox{\hyperlink{namespacejumble__solver_a3b98e50483ddfeb66f02511666cb6f24}{search\+\_\+substring}} (\mbox{\hyperlink{namespacejumble__solver_aa01afb6e5d77cc8220a373c005bcb06a}{search\+\_\+word}}, \mbox{\hyperlink{namespacejumble__solver_a69584ba90b098f23df3702374e594862}{word}})
+\item 
+def \mbox{\hyperlink{namespacejumble__solver_aa5f573dfccebb2d43b97012477423d7f}{search\+\_\+word}} (search\+\_\+word, \mbox{\hyperlink{namespacejumble__solver_a8aa55c8aa2346c2358ce68869a197088}{file\+\_\+path}}=\textquotesingle{}word\+\_\+list.\+txt\textquotesingle{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacejumble__solver_a8187411843a6284ffb964ef3fb9fcab3}{args}} = parser.\+parse\+\_\+args()
+\item 
+\mbox{\hyperlink{namespacejumble__solver_affb1327b18bf08a379d19eef89cf1ed1}{default}}
+\item 
+\mbox{\hyperlink{namespacejumble__solver_a36cde68b055f3f2ee671020af4ccf4e2}{False}}
+\item 
+\mbox{\hyperlink{namespacejumble__solver_a8aa55c8aa2346c2358ce68869a197088}{file\+\_\+path}}
+\item 
+\mbox{\hyperlink{namespacejumble__solver_a81ae9faedaa69e3e28e2960a0548df8d}{help}}
+\item 
+\mbox{\hyperlink{namespacejumble__solver_a90eee7a4677ca8b1ed116364a24367f9}{parser}} = argparse.\+Argument\+Parser()
+\item 
+\mbox{\hyperlink{namespacejumble__solver_ae81948490ddf54e80a22593640178350}{required}}
+\item 
+\mbox{\hyperlink{namespacejumble__solver_aa01afb6e5d77cc8220a373c005bcb06a}{search\+\_\+word}}
+\item 
+\mbox{\hyperlink{namespacejumble__solver_a69584ba90b098f23df3702374e594862}{word}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacejumble__solver_a6b21113c44f0c5cd849ee18039b9e2eb}\label{namespacejumble__solver_a6b21113c44f0c5cd849ee18039b9e2eb}} 
+\index{jumble\_solver@{jumble\_solver}!create\_aux@{create\_aux}}
+\index{create\_aux@{create\_aux}!jumble\_solver@{jumble\_solver}}
+\doxysubsubsection{\texorpdfstring{create\_aux()}{create\_aux()}}
+{\footnotesize\ttfamily def jumble\+\_\+solver.\+create\+\_\+aux (\begin{DoxyParamCaption}\item[{}]{word }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}!Creates an auxiliary array
+
+@param      word:  The word from the word list
+@type       word:  { string }
+
+@returns:   { Auxiliary array }
+@rtype:     { list }
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacejumble__solver_aba8384dbe60fa55f16120293a9c43d56}\label{namespacejumble__solver_aba8384dbe60fa55f16120293a9c43d56}} 
+\index{jumble\_solver@{jumble\_solver}!download@{download}}
+\index{download@{download}!jumble\_solver@{jumble\_solver}}
+\doxysubsubsection{\texorpdfstring{download()}{download()}}
+{\footnotesize\ttfamily def jumble\+\_\+solver.\+download (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}!Downloads the word list as dataset
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacejumble__solver_a3b98e50483ddfeb66f02511666cb6f24}\label{namespacejumble__solver_a3b98e50483ddfeb66f02511666cb6f24}} 
+\index{jumble\_solver@{jumble\_solver}!search\_substring@{search\_substring}}
+\index{search\_substring@{search\_substring}!jumble\_solver@{jumble\_solver}}
+\doxysubsubsection{\texorpdfstring{search\_substring()}{search\_substring()}}
+{\footnotesize\ttfamily def jumble\+\_\+solver.\+search\+\_\+substring (\begin{DoxyParamCaption}\item[{}]{search\+\_\+word,  }\item[{}]{word }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}!Searches for the substring match in the word list
+
+@param      search_word:  The user deifned word for which we find the match
+@type       search_word:  { string }
+@param      word:         The word from the word list
+@type       word:         { string }
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacejumble__solver_aa5f573dfccebb2d43b97012477423d7f}\label{namespacejumble__solver_aa5f573dfccebb2d43b97012477423d7f}} 
+\index{jumble\_solver@{jumble\_solver}!search\_word@{search\_word}}
+\index{search\_word@{search\_word}!jumble\_solver@{jumble\_solver}}
+\doxysubsubsection{\texorpdfstring{search\_word()}{search\_word()}}
+{\footnotesize\ttfamily def jumble\+\_\+solver.\+search\+\_\+word (\begin{DoxyParamCaption}\item[{}]{search\+\_\+word,  }\item[{}]{file\+\_\+path = {\ttfamily \textquotesingle{}word\+\_\+list.txt\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}!Searchs for the word in the word list
+
+@param      search_word:  The user deifned word for which we find the match
+@type       search_word:  { string }
+@param      file_path:    The filename which contains a
+                          list of english words
+@type       file_path:    { string}
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacejumble__solver_a8187411843a6284ffb964ef3fb9fcab3}\label{namespacejumble__solver_a8187411843a6284ffb964ef3fb9fcab3}} 
+\index{jumble\_solver@{jumble\_solver}!args@{args}}
+\index{args@{args}!jumble\_solver@{jumble\_solver}}
+\doxysubsubsection{\texorpdfstring{args}{args}}
+{\footnotesize\ttfamily args = parser.\+parse\+\_\+args()}
+
+\mbox{\Hypertarget{namespacejumble__solver_affb1327b18bf08a379d19eef89cf1ed1}\label{namespacejumble__solver_affb1327b18bf08a379d19eef89cf1ed1}} 
+\index{jumble\_solver@{jumble\_solver}!default@{default}}
+\index{default@{default}!jumble\_solver@{jumble\_solver}}
+\doxysubsubsection{\texorpdfstring{default}{default}}
+{\footnotesize\ttfamily default}
+
+\mbox{\Hypertarget{namespacejumble__solver_a36cde68b055f3f2ee671020af4ccf4e2}\label{namespacejumble__solver_a36cde68b055f3f2ee671020af4ccf4e2}} 
+\index{jumble\_solver@{jumble\_solver}!False@{False}}
+\index{False@{False}!jumble\_solver@{jumble\_solver}}
+\doxysubsubsection{\texorpdfstring{False}{False}}
+{\footnotesize\ttfamily False}
+
+\mbox{\Hypertarget{namespacejumble__solver_a8aa55c8aa2346c2358ce68869a197088}\label{namespacejumble__solver_a8aa55c8aa2346c2358ce68869a197088}} 
+\index{jumble\_solver@{jumble\_solver}!file\_path@{file\_path}}
+\index{file\_path@{file\_path}!jumble\_solver@{jumble\_solver}}
+\doxysubsubsection{\texorpdfstring{file\_path}{file\_path}}
+{\footnotesize\ttfamily file\+\_\+path}
+
+\mbox{\Hypertarget{namespacejumble__solver_a81ae9faedaa69e3e28e2960a0548df8d}\label{namespacejumble__solver_a81ae9faedaa69e3e28e2960a0548df8d}} 
+\index{jumble\_solver@{jumble\_solver}!help@{help}}
+\index{help@{help}!jumble\_solver@{jumble\_solver}}
+\doxysubsubsection{\texorpdfstring{help}{help}}
+{\footnotesize\ttfamily help}
+
+\mbox{\Hypertarget{namespacejumble__solver_a90eee7a4677ca8b1ed116364a24367f9}\label{namespacejumble__solver_a90eee7a4677ca8b1ed116364a24367f9}} 
+\index{jumble\_solver@{jumble\_solver}!parser@{parser}}
+\index{parser@{parser}!jumble\_solver@{jumble\_solver}}
+\doxysubsubsection{\texorpdfstring{parser}{parser}}
+{\footnotesize\ttfamily parser = argparse.\+Argument\+Parser()}
+
+\mbox{\Hypertarget{namespacejumble__solver_ae81948490ddf54e80a22593640178350}\label{namespacejumble__solver_ae81948490ddf54e80a22593640178350}} 
+\index{jumble\_solver@{jumble\_solver}!required@{required}}
+\index{required@{required}!jumble\_solver@{jumble\_solver}}
+\doxysubsubsection{\texorpdfstring{required}{required}}
+{\footnotesize\ttfamily required}
+
+\mbox{\Hypertarget{namespacejumble__solver_aa01afb6e5d77cc8220a373c005bcb06a}\label{namespacejumble__solver_aa01afb6e5d77cc8220a373c005bcb06a}} 
+\index{jumble\_solver@{jumble\_solver}!search\_word@{search\_word}}
+\index{search\_word@{search\_word}!jumble\_solver@{jumble\_solver}}
+\doxysubsubsection{\texorpdfstring{search\_word}{search\_word}}
+{\footnotesize\ttfamily search\+\_\+word}
+
+\mbox{\Hypertarget{namespacejumble__solver_a69584ba90b098f23df3702374e594862}\label{namespacejumble__solver_a69584ba90b098f23df3702374e594862}} 
+\index{jumble\_solver@{jumble\_solver}!word@{word}}
+\index{word@{word}!jumble\_solver@{jumble\_solver}}
+\doxysubsubsection{\texorpdfstring{word}{word}}
+{\footnotesize\ttfamily word}
+
