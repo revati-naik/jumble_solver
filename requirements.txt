@@ -1,2 +1,2 @@
-urllib
 argparse
+requests

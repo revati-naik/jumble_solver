@@ -19,11 +19,15 @@ The program also searches for sub-strings of the original word in the list. Sub-
 
   * Enivronment: Linux
   
-  * Python > 3.0 ([Download](https://www.python.org/downloads/))
+  * Python 3.x ([Download](https://www.python.org/downloads/))
   
-  * urllib: 
+  * urllib
 
-    pip3 install urllib3
+  * argparse
+
+    pip3 install --user -r requirements.txt
+
+   
 
 ## Dataset 
 

@@ -1,11 +1,8 @@
 from __future__ import print_function
 
-import urllib
 import os.path
 import argparse
-
-from urllib.request import urlopen
-
+import requests
 
 ##
 ## Downloads the word list as data set
@@ -19,8 +16,9 @@ def download():
 	try:
 
 		#open the link and read the data on the link
-		data = urlopen(link)
-		words_data = data.read().decode('utf-8')
+		# data = urlopen(link)
+		response = requests.get(link)
+		words_data = response.text
 
 
 		#file path to data set (.txt) file
